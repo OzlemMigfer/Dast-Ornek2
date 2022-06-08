@@ -1,0 +1,12 @@
+---
+permalink: js/eleventy.js
+eleventyExcludeFromCollections: true
+---
+{% set js %}
+{# Islands must come first #}
+{% include "components/islands.js" %}
+
+{% include "components/html-fetch.js" %}
+{% include "../../node_modules/@zachleat/filter-container/filter-container.js" %}
+{% endset %}
+{{ js | jsmin | safe }}
